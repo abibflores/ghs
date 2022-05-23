@@ -1,0 +1,25 @@
+{
+  "name": "ghs",
+  "version": "1.0.0",
+  "description": "En este repositorio estaremos probando la API de github, buscaremos usuarios y repositorios. Crearemos este este proyecto con la siguiente estructura:",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev -p 2805"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abibflores/ghs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abibflores/ghs/issues"
+  },
+  "homepage": "https://github.com/abibflores/ghs#readme",
+  "dependencies": {
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}
