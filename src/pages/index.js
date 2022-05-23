@@ -1,3 +1,5 @@
 import React from "react";
 
-export default () => (<div>Hola soy Git Hub Search</div>);
+const Home = () => <div>Hola soy Git Hub Search</div>;
+
+export default Home;
