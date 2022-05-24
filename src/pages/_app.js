@@ -1,18 +1,15 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import React from "react";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import theme from "./../styles/theme/theme-ligth.json";
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
   }
-`
-
-const theme = {
-  colors: {
-    primary: '#512da8',
-  },
-}
+`;
 
 export default function App({ Component, pageProps }) {
   return (
@@ -22,5 +19,5 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  )
+  );
 }

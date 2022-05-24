@@ -1,0 +1,25 @@
+{
+  "colors": {
+    "primary": "#7121CC",
+    "primaryLight": "#b494e2",
+    "primaryDark": "#4a05b7",
+    "secondary": "#9E9E9E",
+    "secondaryLight": "#eeeeee",
+    "secondaryDark": "#424242",
+    "neutro": "#DDEAC8"
+  },
+  "fonts": {
+    "big": {
+      "size": "24px",
+      "weight": "700"
+    },
+    "middle": {
+      "size": "20px",
+      "weight": "500"
+    },
+    "small": {
+      "size": "16px",
+      "weight": "300"
+    }
+  }
+}
