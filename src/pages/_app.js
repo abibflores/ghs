@@ -3,11 +3,12 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import theme from "./../styles/theme/theme-ligth.json";
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    background: #9E9E9E;
   }
 `;
 
