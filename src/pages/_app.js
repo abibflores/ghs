@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import PropTypes from "prop-types";
 
 import theme from "./../styles/theme/theme-ligth.json";
+import Head from "next/head";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -15,14 +16,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: #ccc;
   }
-  .Logo {
-    display: none;
-  }
-  @media screen and (min-width: 1024px) {
-    .Logo {
-      display: block;
-    }
-  }
 `;
 
 export default function App({ Component, pageProps }) {
@@ -30,6 +23,11 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+        />      </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <QueryClientProvider client={queryClient}>

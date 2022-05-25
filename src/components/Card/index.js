@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Avatar } from "components/Avatar";
 import { Text } from "components/Text";
-import { StylesCard, StylesCardHeader, StylesCardInfo } from "./styles";
+import { StylesCard, StylesCardInfo } from "./styles";
 import { Anchor } from "components/Anchor";
 
 export const Card = ({ title, subTitle, src, url, variant }) => {
@@ -13,14 +13,12 @@ export const Card = ({ title, subTitle, src, url, variant }) => {
     <StylesCard>
       <Avatar src={src} alt={`Avatar del usuario ${avatarAlt}`}/>
       <StylesCardInfo>
-        <StylesCardHeader>
-          <Text type="h2" variant="middle" >{title}</Text>
-          <Anchor href={url} target="_blank">{anchorText}</Anchor>
-        </StylesCardHeader>
+        <Text type="h2" variant="middle" >{title}</Text>
         { 
           subTitle &&
-            <Text>{`by - ${subTitle}`}</Text>
+          <Text variant="small">{`by - ${subTitle}`}</Text>
         }
+        <Anchor variant="button" href={url} target="_blank">{anchorText}</Anchor>
       </StylesCardInfo>
     </StylesCard>
   );

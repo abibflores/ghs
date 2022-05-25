@@ -10,5 +10,5 @@ export const AnchorStyle = styled.a`
     text-align: center;
     padding: ${({variant}) => variant === "button" ? "8px" : "4px"};
     ${({ variant }) => variant === "button" && "border-radius: 5px"};
-    font-size: ${({ theme }) => theme.fonts.middle.size};
+    font-size: ${({ theme, size }) => theme.fonts[size].size};
 `;

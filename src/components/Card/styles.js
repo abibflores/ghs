@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const StylesCard = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: 55px auto;
     gap: 0px 20px;
-    justify-content: flex-start;
-    align-items: center;
     border-radius: 15px;
     background: ${({ theme }) => theme.colors.neutro};
     width: 95%;
@@ -17,11 +16,4 @@ export const StylesCardInfo = styled.div`
     gap: 10px;
     justify-content: flex-start;
     align-items: flex-start;
-`;
-
-export const StylesCardHeader = styled.div`
-    display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-    align-items: center;
 `;

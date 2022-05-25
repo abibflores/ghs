@@ -10,8 +10,11 @@ export const StylesLayout = styled.div`
 
 export const StylesLayoutChildren = styled.div`
     display: flex;
+    width: 95%;
     flex-direction: column;
-    justify-content: center;
+    justify-content: ${({ center }) => center ? "center" : "flex-start"};
     align-items: center;
     gap: 20px 0px;
+    min-height: calc(100vh - 137px);
+    padding: 10px 0px;
 `;

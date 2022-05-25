@@ -7,7 +7,7 @@ import { StylesLayout, StylesLayoutChildren } from "./styles";
 export const Layout = ({ children, path }) => (
   <StylesLayout>
     <Header path={path} />
-    <StylesLayoutChildren>
+    <StylesLayoutChildren center={!path}>
       {children}
     </StylesLayoutChildren>
     <Footer />

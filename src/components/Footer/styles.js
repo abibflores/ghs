@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StylesFooter = styled.footer`
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     gap: 20px;
     background: ${({theme}) => theme.colors.primary};
     width: 100%;

@@ -6,4 +6,5 @@ export const StylesInput = styled.input`
     width: 100%;
     border: none;
     background: ${({ theme }) => theme.colors.secondaryLight};
+    font-size: ${({ theme}) => theme.fonts.small.size};
 `;
