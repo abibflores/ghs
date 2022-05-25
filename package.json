@@ -1,0 +1,43 @@
+{
+  "name": "ghs",
+  "version": "1.0.0",
+  "description": "En este repositorio estaremos probando la API de github, buscaremos usuarios y repositorios. Crearemos este este proyecto con la siguiente estructura:",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev -p 2805",
+    "build": "next build",
+    "export": "npm run build && next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abibflores/ghs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abibflores/ghs/issues"
+  },
+  "homepage": "https://github.com/abibflores/ghs#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-hook-form": "^7.31.2",
+    "react-query": "^3.39.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^12.1.6",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "prettier": "^2.6.2",
+    "prop-types": "^15.8.1"
+  }
+}

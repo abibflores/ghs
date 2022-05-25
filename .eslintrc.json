@@ -1,0 +1,41 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "standard",
+        "prettier",
+        "plugin:@next/next/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "settings": {
+        "react": {
+          "version": "detect"
+        }
+      },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "import/no-dynamic-require": 0,
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+		"react/jsx-indent": [2, 2],
+		"react/jsx-indent-props": [2, 2],
+		"jsx-a11y/href-no-hash": "off",
+		"indent": ["error", 2],
+		"semi": ["error", "always"],
+		"function-paren-newline": ["error", "consistent"],
+		"no-undef": "error",
+		"no-underscore-dangle": [2, { "allow": ["_type"] }],
+		"react/jsx-props-no-spreading": "off"
+    }
+}
