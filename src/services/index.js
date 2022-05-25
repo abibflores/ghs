@@ -28,3 +28,34 @@ export const getUser = ({ queryKey = [] }) => {
       console.log("error", error);
     });
 };
+
+export const getRepositorie = ({ queryKey = [] }) => {
+  const [, name = ""] = queryKey;
+  
+  if (!name) {
+    return [];
+  }
+  
+  return axios
+    .get(`https://api.github.com/search/repositories?&sort=updated&per_page=10&page=1&q=${name}`)
+    .then((res) => {
+      console.log(res, "res");
+      const repoList = res?.data?.items;
+      let repoListFormat = [];
+      if (repoList.length > 0) {
+        repoListFormat = repoList.map(repo => {
+          return {
+            title: repo?.name,
+            id: repo?.id,
+            src: repo?.owner?.avatar_url,
+            url: repo?.owner?.html_url,
+            subTitle: repo?.owner?.login,
+          };
+        });
+      }
+      return repoListFormat;
+    })
+    .catch((error) => {
+      console.log("error", error);
+    });
+};
