@@ -1,10 +1,14 @@
 import React from "react";
 import { Text } from "components/Text";
+import { Layout } from "components/Layout";
 
 const Home = () => (
-  <div>
-    <Text variant="big" type="h1">Hola soy Git Hub Search</Text>
-  </div>
+  <Layout>
+    <Text variant="big" type="h1">
+      Git Hub Search 
+    </Text>
+    <Text>Busca usuarios o repositorios de github</Text>
+  </Layout>
 );
 
 export default Home;
