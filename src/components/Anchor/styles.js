@@ -8,5 +8,7 @@ export const AnchorStyle = styled.a`
     border: none;
     border-bottom: ${({ theme, $active }) => $active ? `solid 2px ${theme.colors.neutro}` : "none"};
     text-align: center;
-    padding: 4px;
+    padding: ${({variant}) => variant === "button" ? "8px" : "4px"};
+    ${({ variant }) => variant === "button" && "border-radius: 5px"};
+    font-size: ${({ theme }) => theme.fonts.middle.size};
 `;

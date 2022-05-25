@@ -15,6 +15,14 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: #ccc;
   }
+  .Logo {
+    display: none;
+  }
+  @media screen and (min-width: 1024px) {
+    .Logo {
+      display: block;
+    }
+  }
 `;
 
 export default function App({ Component, pageProps }) {

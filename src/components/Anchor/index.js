@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 
 import { AnchorStyle } from "./styles";
 
-export const Anchor = ({ active, children, href, next, target }) => {
+export const Anchor = ({ active, children, href, next, target, variant }) => {
   if (next) {
     return (
       <Link href={href} passHref>
-        <AnchorStyle $active={active}>
+        <AnchorStyle variant={variant} $active={active}>
           {children}
         </AnchorStyle>
       </Link>
@@ -16,7 +16,7 @@ export const Anchor = ({ active, children, href, next, target }) => {
   }
 
   return(
-    <AnchorStyle href={href} target={target}>
+    <AnchorStyle variant={variant} href={href} target={target}>
       {children}
     </AnchorStyle>
   );
@@ -25,7 +25,8 @@ export const Anchor = ({ active, children, href, next, target }) => {
 Anchor.defaultProps = {
   active: false,
   next: false,
-  target: "_self"
+  target: "_self",
+  variant: "a",
 };
 
 Anchor.propTypes = {
@@ -33,5 +34,6 @@ Anchor.propTypes = {
   children: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   next: PropTypes.bool,
-  target: PropTypes.oneOf(["_self", "_blank"])
+  target: PropTypes.oneOf(["_self", "_blank"]),
+  variant: PropTypes.oneOf(["a", "button"]),
 };

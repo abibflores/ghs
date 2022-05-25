@@ -8,7 +8,7 @@ import { ContHeaderStyle, StylesNav } from "./styles";
 export const Header = ({ path }) => {
   return(
     <ContHeaderStyle>
-      <Avatar src="/img/logo.webp" alt="logo Git Hub Search" />
+      <Avatar className="Logo" src="/img/logo.webp" alt="logo Git Hub Search" />
       <StylesNav>
         <Anchor next active={path === ""} href="/">home</Anchor>
         <Anchor next active={path === "users"} href="/users">users</Anchor>
