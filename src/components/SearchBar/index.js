@@ -5,10 +5,10 @@ import { Button } from "components/Button";
 import { Img } from "components/Image";
 import { StylesSearchBar } from "./styles";
 
-export const SearchBar = () => (
-  <StylesSearchBar>
-    <Input placeHolder="ejemplo: abib flores"/>
-    <Button>
+export const SearchBar = ({ action, register }) => (
+  <StylesSearchBar onSubmit={action}>
+    <Input register={register} placeHolder="ejemplo: abib flores"/>
+    <Button onClick={action}>
       <Img src="/svg/search.svg" />
     </Button>
   </StylesSearchBar>
@@ -16,8 +16,12 @@ export const SearchBar = () => (
 
 SearchBar.defaultProps = {
   placeHolder: "",
+  action: () => {},
+  register: () => ({}),
 };
 
 SearchBar.propTypes = {
   placeHolder: PropTypes.string,
+  action: PropTypes.func,
+  register: PropTypes.func,
 };
