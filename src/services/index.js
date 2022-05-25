@@ -48,7 +48,7 @@ export const getRepositorie = ({ queryKey = [] }) => {
             title: repo?.name,
             id: repo?.id,
             src: repo?.owner?.avatar_url,
-            url: repo?.owner?.html_url,
+            url: repo?.html_url,
             subTitle: repo?.owner?.login,
           };
         });

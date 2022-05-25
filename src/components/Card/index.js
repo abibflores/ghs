@@ -18,7 +18,7 @@ export const Card = ({ title, subTitle, src, url, variant }) => {
           subTitle &&
           <Text variant="small">{`by - ${subTitle}`}</Text>
         }
-        <Anchor variant="button" href={url} target="_blank">{anchorText}</Anchor>
+        <Anchor variant="button" href={url} target="_blank" size="small">{anchorText}</Anchor>
       </StylesCardInfo>
     </StylesCard>
   );
