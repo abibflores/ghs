@@ -1,18 +1,22 @@
+import { Img } from "components/Image";
 import React from "react";
-import Image from "next/image";
 import PropTypes from "prop-types";
 
-export const Img = ({ src, alt, height, width }) => (
-  <Image alt={alt} height={height} layout="fixed" src={src} width={width} />
+import { StylesAvatar } from "./styles";
+
+export const Avatar = ({ src, alt, height, width }) => (
+  <StylesAvatar>
+    <Img src={src} alt={alt} height={height} width={width} />
+  </StylesAvatar>
 );
 
-Img.defaultProps = {
+Avatar.defaultProps = {
   alt: "GitHub Search",
   height: 45,
   width: 45,
 };
-
-Img.propTypes = {
+  
+Avatar.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
