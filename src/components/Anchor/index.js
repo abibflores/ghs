@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-import { AnchorStyle } from "./style";
+import { AnchorStyle } from "./styles";
 
 export const Anchor = ({ active, children, href, next }) => {
   if (next) {
