@@ -9,4 +9,5 @@ export const AnchorStyle = styled.a`
     border-bottom: ${({ theme, $active }) => $active ? `solid 2px ${theme.colors.neutro}` : "none"};
     text-align: center;
     max-height: 30px;
+    padding: 4px;
 `;
