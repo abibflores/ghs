@@ -3,7 +3,7 @@ import Image from "next/image";
 import PropTypes from "prop-types";
 
 export const Img = ({ src, alt, height, width }) => (
-  <Image alt={alt} height={height} layout="fixed" src={src} width={width} />
+  <Image style={{ background: "transparent" }} alt={alt} height={height} layout="fixed" src={src} width={width} />
 );
 
 Img.defaultProps = {
