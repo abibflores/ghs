@@ -6,7 +6,6 @@ export const ContHeaderStyle = styled.div`
     gap: 0px 20px;
     background: ${({theme}) => theme.colors.primary};
     padding: 20px;
-    position: fixed;
     width: 100%;
     align-items: center;
 `;

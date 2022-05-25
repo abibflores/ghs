@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { AnchorStyle } from "./styles";
 
-export const Anchor = ({ active, children, href, next }) => {
+export const Anchor = ({ active, children, href, next, target }) => {
   if (next) {
     return (
       <Link href={href} passHref>
@@ -16,7 +16,7 @@ export const Anchor = ({ active, children, href, next }) => {
   }
 
   return(
-    <AnchorStyle href={href} >
+    <AnchorStyle href={href} target={target}>
       {children}
     </AnchorStyle>
   );
@@ -25,6 +25,7 @@ export const Anchor = ({ active, children, href, next }) => {
 Anchor.defaultProps = {
   active: false,
   next: false,
+  target: "_self"
 };
 
 Anchor.propTypes = {
@@ -32,4 +33,5 @@ Anchor.propTypes = {
   children: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   next: PropTypes.bool,
+  target: PropTypes.oneOf(["_self", "_blank"])
 };
