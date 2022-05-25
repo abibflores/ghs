@@ -6,12 +6,17 @@ import PropTypes from "prop-types";
 import theme from "./../styles/theme/theme-ligth.json";
 import Head from "next/head";
 
+import "../styles/css/styles.css";
+
 const GlobalStyle = createGlobalStyle`
   * {
+
+    font-family: 'Montserrat', sans-serif;
+  }
+  body, div, a, footer, nav, button, input, h1, h2, span {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
   }
   body {
     background: #ccc;

@@ -39,7 +39,6 @@ export const getRepositorie = ({ queryKey = [] }) => {
   return axios
     .get(`https://api.github.com/search/repositories?&sort=updated&per_page=10&page=1&q=${name}`)
     .then((res) => {
-      console.log(res, "res");
       const repoList = res?.data?.items;
       let repoListFormat = [];
       if (repoList.length > 0) {

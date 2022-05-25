@@ -32,7 +32,7 @@ Anchor.defaultProps = {
 
 Anchor.propTypes = {
   active: PropTypes.bool,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
   next: PropTypes.bool,
   target: PropTypes.oneOf(["_self", "_blank"]),

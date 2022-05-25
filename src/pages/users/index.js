@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 
 
 import { getUser } from "services";
+import { Loader } from "components/Loader";
 
 const UsersPage = () => {
   const {
@@ -18,7 +19,7 @@ const UsersPage = () => {
 
   const { search: name } = getValues();
 
-  const { data, refetch } = useQuery(
+  const { data, refetch, isLoading } = useQuery(
     ['users', name],
     getUser,
     {
@@ -36,6 +37,7 @@ const UsersPage = () => {
       {
         data?.length > 0 && data.map(item => <Card key={item.id} {...item} />)
       }
+      {isLoading && <Loader />}
     </Layout>
   );
 };

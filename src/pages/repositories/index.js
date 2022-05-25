@@ -6,6 +6,7 @@ import { Card } from "components/Card";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import { getRepositorie } from "services";
+import { Loader } from "components/Loader";
 
 const ReposotiriesPage = () => {
 
@@ -17,7 +18,7 @@ const ReposotiriesPage = () => {
     
   const { search: name } = getValues();
     
-  const { data, refetch } = useQuery(
+  const { data, refetch, isLoading } = useQuery(
     ['repositories', name],
     getRepositorie,
     {
@@ -35,6 +36,7 @@ const ReposotiriesPage = () => {
       {
         data?.length > 0 && data.map(item => <Card variant="repo" key={item.id} {...item} />)
       }
+      { isLoading && <Loader />}
     </Layout>
   );
 };
