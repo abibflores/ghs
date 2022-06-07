@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Text } from "components/Text";
 import { Layout } from "components/Layout";
 import { SearchBar } from "components/SearchBar";
@@ -11,12 +11,13 @@ import { Loader } from "components/Loader";
 const ReposotiriesPage = () => {
 
   const {
-    getValues,
+    watch,
     register,
     handleSubmit,
   } = useForm();
     
-  const { search: name } = getValues();
+  const name = watch("search");
+
     
   const { data, refetch, isLoading } = useQuery(
     ['repositories', name],
@@ -27,16 +28,22 @@ const ReposotiriesPage = () => {
     }
   );
 
+  useEffect(() => {
+    if(name) {
+      refetch();
+    }
+  }, [name]);
+
   return(  
     <Layout path="repositories">
       <Text variant="big" type="h1">
         Busca un repositorio 
       </Text>
       <SearchBar action={handleSubmit((data) => refetch())} register={register}/>
+      { isLoading && <Loader />}
       {
         data?.length > 0 && data.map(item => <Card variant="repo" key={item.id} {...item} />)
       }
-      { isLoading && <Loader />}
     </Layout>
   );
 };

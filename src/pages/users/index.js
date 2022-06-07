@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Text } from "components/Text";
 import { Layout } from "components/Layout";
 import { SearchBar } from "components/SearchBar";
@@ -12,14 +12,14 @@ import { Loader } from "components/Loader";
 
 const UsersPage = () => {
   const {
-    getValues,
+    watch,
     register,
     handleSubmit,
   } = useForm();
 
-  const { search: name } = getValues();
+  const name = watch("search");
 
-  const { data, refetch, isLoading } = useQuery(
+  const { data, refetch, isLoading, error } = useQuery(
     ['users', name],
     getUser,
     {
@@ -28,16 +28,22 @@ const UsersPage = () => {
     }
   );
 
+  useEffect(() => {
+    if(name) {
+      refetch();
+    }
+  }, [name]);
+
   return(  
     <Layout path="users">
       <Text variant="big" type="h1">
         Busca un usuario 
       </Text>
       <SearchBar action={handleSubmit((data) => refetch())} register={register}/>
-      {
-        data?.length > 0 && data.map(item => <Card key={item.id} {...item} />)
-      }
       {isLoading && <Loader />}
+      {
+        (data?.length > 0) && data.map(item => <Card key={item.id} {...item} />)
+      }
     </Layout>
   );
 };
