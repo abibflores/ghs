@@ -19,7 +19,7 @@ const UsersPage = () => {
 
   const name = watch("search");
 
-  const { data, refetch, isLoading, error } = useQuery(
+  const { data, refetch, isLoading } = useQuery(
     ['users', name],
     getUser,
     {
@@ -41,6 +41,7 @@ const UsersPage = () => {
       </Text>
       <SearchBar action={handleSubmit((data) => refetch())} register={register}/>
       {isLoading && <Loader />}
+      { (name && data?.length === 0) && `No hay resultados para la busqueda: ${name}` }
       {
         (data?.length > 0) && data.map(item => <Card key={item.id} {...item} />)
       }
