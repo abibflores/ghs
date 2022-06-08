@@ -11,7 +11,7 @@ export const useSearch = (callback, key) => {
         
   const name = watch("search");
     
-  const debouncedSearch = useDebounce(name, 1000);
+  const debouncedSearch = useDebounce(name, 800);
     
   const { data, refetch, isLoading } = useQuery(
     [`${key}`, debouncedSearch],
