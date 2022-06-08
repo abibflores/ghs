@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import { getRepositorie } from "services";
 import { Loader } from "components/Loader";
+import useDebounce from "utils";
 
 const ReposotiriesPage = () => {
 
@@ -18,21 +19,22 @@ const ReposotiriesPage = () => {
     
   const name = watch("search");
 
-    
+  const debouncedSearch = useDebounce(name, 1000);
+
   const { data, refetch, isLoading } = useQuery(
-    ['repositories', name],
+    ['repositories', debouncedSearch],
     getRepositorie,
     {
-      enabled: !!name,
+      enabled: !!debouncedSearch,
       refetchOnWindowFocus: false,
     }
   );
 
   useEffect(() => {
-    if(name) {
+    if(debouncedSearch) {
       refetch();
     }
-  }, [name]);
+  }, [debouncedSearch]);
 
   return(  
     <Layout path="repositories">
@@ -41,6 +43,7 @@ const ReposotiriesPage = () => {
       </Text>
       <SearchBar action={handleSubmit((data) => refetch())} register={register}/>
       { isLoading && <Loader />}
+      { (name && data?.length === 0) && `No hay resultados para la busqueda: ${name}` }
       {
         data?.length > 0 && data.map(item => <Card variant="repo" key={item.id} {...item} />)
       }

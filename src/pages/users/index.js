@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 
 import { getUser } from "services";
 import { Loader } from "components/Loader";
+import useDebounce from "utils";
 
 const UsersPage = () => {
   const {
@@ -19,20 +20,23 @@ const UsersPage = () => {
 
   const name = watch("search");
 
+  const debouncedSearch = useDebounce(name, 1000);
+
   const { data, refetch, isLoading } = useQuery(
-    ['users', name],
+    ['users', debouncedSearch],
     getUser,
     {
-      enabled: !!name,
+      enabled: !!debouncedSearch,
       refetchOnWindowFocus: false,
     }
   );
 
+
   useEffect(() => {
-    if(name) {
+    if(debouncedSearch) {
       refetch();
     }
-  }, [name]);
+  }, [debouncedSearch]);
 
   return(  
     <Layout path="users">
